@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* ************************************ */
+/* initialize css                       */
+/* ************************************ */
+* {outline: none;}
+*, *:before, *:after {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+html, body
+, div,span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre
+, abbr, address, cite, code
+, del, dfn, em, img, ins, kbd, q, samp
+, small, strong, sub, sup, var
+, b, i
+, dl, dt, dd, ol, ul, li
+, fieldset, form, label, legend, textarea, button
+, table, caption, tbody, tfoot, thead, tr, th, td
+, article, aside, canvas, details, figcaption, figure
+, footer, header, hgroup, menu, nav, section, summary
+, time, mark, audio, video {
+    margin: 0; padding: 0; border: 0; outline: 0; 
+    background: transparent; font-family: 'Malgun Gothic', '맑은 고딕', dotum, '돋움', gulim, '굴림', tahoma, sans-serif;
+    font-weight: normal; vertical-align: baseline;
+}
+h1, h2, h3, h4, h5, h6, th, strong, mark {font-weight: normal; font-size: inherit; font-family: inherit; line-height: inherit;}
+ul, ol, dl, menu {list-style: none;}
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary {display: block;}
+em {font-style: normal; display: block;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: ''; content: none;}
+a {margin: 0; padding: 0; border: 0; font-size: 100%; text-decoration: none; color: inherit;}
+a:hover, a:active, a:focus {text-decoration: none;}
+ins {background-color: #FF9; color: #000; text-decoration: none;}
+mark {background-color: #FF9; color: #000; font-style: italic; font-weight: bold;}
+del {text-decoration: line-through;}
+abbr[title], dfn[title] {border-bottom: 1px dotted #000;}

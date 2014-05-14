@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+	
+	<!-- ============================================================================ -->
+	<!-- [2013-12-13][pluto@i-popcorn.co.kr][INSERT: For Annotation] -->
+	<!-- ============================================================================ -->
+	<context:annotation-config />
+	
+	<!-- ============================================================================ -->
+	<!-- [2014-04-10][ivrson][INSERT: Property for Common(Static)] -->
+	<!-- ============================================================================ -->
+	<util:properties id="commonProperties" location="/WEB-INF/conf/common.properties"/>
+	
+	<!-- ============================================================================ -->
+	<!-- [2014-04-10][ivrson][INSERT: Property for Config(Dynamic)] -->
+	<!-- ============================================================================ -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>/WEB-INF/conf/config</value>
+			</list>
+		</property>
+		<property name="cacheSeconds">
+			<value>3</value>
+		</property>
+	</bean>
+	<bean id="messageSourceAccessor" class="org.springframework.context.support.MessageSourceAccessor">
+		<constructor-arg>
+			<ref bean="messageSource" />
+		</constructor-arg>
+	</bean>
+	
+	
+	<!-- ============================================================================ -->
+	<!-- [2014-04-09][ivrson][INSERT: 0. Define Property for DB] -->
+	<!-- ============================================================================ -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="/WEB-INF/conf/database.properties" />
+	</bean>
+	
+	<bean name="dsCdol" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<!-- from database.propeties -->
+		<property name="driverClassName" value="${cdol.driver}" />
+		<property name="url" value="${cdol.url}" />
+		<property name="username" value="${cdol.user}" />
+		<property name="password" value="${cdol.password}" />
+	</bean>
+	
+	<!-- ============================================================================ -->
+	<!-- [2014-04-09][ivrson][INSERT: 2. Define SqlSessionFactory(set DataSource & SqlMapper)] -->
+	<!-- ============================================================================ -->
+	<bean name="ssfCdol" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- Data Source -->
+		<property name="dataSource" ref="dsCdol" />
+		<!-- mybatis config -->
+		<property name="configLocation" value="classpath:com/cdol/mybatis/config.xml" />
+	</bean>	
+	
+	<!-- ============================================================================ -->
+	<!-- [2014-04-09][ivrson][INSERT: 3. Define SqlSession(set SqlSessionFactory)] -->
+	<!-- ============================================================================ -->
+	<bean name="sqlSessionCdol" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="ssfCdol" />
+	</bean>
+	
+	<!-- ============================================================================ -->
+	<!-- [2014-04-09][ivrson][INSERT: 5. Define & Process Transaction by Annotation] -->
+	<!-- ============================================================================ -->
+	<bean id="txCdol" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dsCdol" />
+		<qualifier value="txCdol" />
+	</bean>
+</beans>

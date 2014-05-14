@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.cdol.backoffice.common.vo.LoginVO"			alias="LoginVO" />
+	<!--  
+		<typeAlias type="kr.co.ipopcorn.backoffice.common.dto.AllianceDto"			alias="allianceDto" />
+		<typeAlias type="kr.co.ipopcorn.backoffice.common.dto.CountDto"				alias="countDto" />
+		<typeAlias type="kr.co.ipopcorn.backoffice.common.dto.DepartmentDto"		alias="departmentDto" />
+		<typeAlias type="kr.co.ipopcorn.backoffice.common.dto.UsrTypeDto"			alias="usrTypeDto" />
+		<typeAlias type="kr.co.ipopcorn.backoffice.board.dto.ProjectDto"			alias="boardProjectDto" />
+		<typeAlias type="kr.co.ipopcorn.backoffice.board.dto.ProjectFileDto"		alias="boardProjectFileDto" />
+		<typeAlias type="kr.co.ipopcorn.backoffice.board.dto.ProjectCommentDto"		alias="boardProjectCommentDto" />
+		<typeAlias type="kr.co.ipopcorn.backoffice.config.dto.ManagerDto"			alias="managerDto" />
+		<typeAlias type="kr.co.ipopcorn.backoffice.config.dto.MenuBackofficeDto"	alias="menuBackofficeDto" />
+	-->
+	</typeAliases>  
+	<mappers>
+		<mapper resource="com/cdol/mybatis/common/Login.xml" />
+	<!--
+		<mapper resource="kr/co/ipopcorn/backoffice/mybatis/common/Login.xml" />
+		<mapper resource="kr/co/ipopcorn/backoffice/mybatis/common/Alliance.xml" />
+		<mapper resource="kr/co/ipopcorn/backoffice/mybatis/common/Department.xml" />
+		<mapper resource="kr/co/ipopcorn/backoffice/mybatis/common/UsrType.xml" />
+		<mapper resource="kr/co/ipopcorn/backoffice/mybatis/board/Project.xml" /> 
+		<mapper resource="kr/co/ipopcorn/backoffice/mybatis/board/ProjectFile.xml" />
+		<mapper resource="kr/co/ipopcorn/backoffice/mybatis/board/ProjectComment.xml" />
+		<mapper resource="kr/co/ipopcorn/backoffice/mybatis/config/Manager.xml" />
+		<mapper resource="kr/co/ipopcorn/backoffice/mybatis/config/ManagerMst.xml" />
+		<mapper resource="kr/co/ipopcorn/backoffice/mybatis/config/ManagerDtl.xml" />
+		<mapper resource="kr/co/ipopcorn/backoffice/mybatis/config/MenuBackoffice.xml" />
+	-->
+	</mappers>
+</configuration>

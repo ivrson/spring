@@ -1,0 +1,116 @@
+@charset "UTF-8";
+@import url(/css/initial.css);
+
+/* ************************************ */
+/* css for html tag                     */
+/* ************************************ */
+/* body */
+body {
+	font-family: '맑은 고딕', '굴림', '돋움', 'dotum', 'Arial';
+	font-size: 13px;
+	line-height: 1.25em;
+	color: #444;
+	-webkit-text-size-adjust: none;
+	letter-spacing: -0.05em;
+}
+
+/* a */
+a:link {
+	font-family: '맑은 고딕', '굴림', '돋움', 'dotum', 'Arial';
+	font-size: 13px;
+	line-height: 1.25em;
+	color: #676D72;
+	text-decoration: none;
+}
+a:visited {
+	font-family: '맑은 고딕', '굴림', '돋움', 'dotum', 'Arial';
+	font-size: 13px;
+	line-height: 1.25em;
+	color: #676D72;
+	text-decoration: none;
+}
+a:hover {
+	font-family: '맑은 고딕', '굴림', '돋움', 'dotum', 'Arial';
+	font-size: 13px;
+	line-height: 1.25em;
+	color: #0000FF;
+	text-decoration: none;
+}
+
+/* ************************************ */
+/* css layout                           */
+/* ************************************ */
+#wrap {
+	position: relative;
+	width: 100%;
+	height:100%;
+}
+
+#header {
+	clear: both;
+	position: relative;
+	width: 1024px;
+	margin: 0 auto;
+	height: 10px;
+	margin-bottom: 15px;
+}
+
+#container {
+	clear:both;
+	position: relative;
+	text-align: left;
+	width: 1024px;
+	margin:0 auto 30px;
+}
+
+#footer {
+	position: relative;
+	background: #FFF;
+	text-align: center;
+	color: #4C4C4C;
+	height: 20px;
+	vertical-align: middle;
+}
+
+
+/* ************************************ */
+/* css for html class attribute         */
+/* ************************************ */
+.box {
+	background-color: #FFF;
+	border: 1px solid #BBB;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+
+.box li {
+	border-bottom: 1px solid #BBB;
+	padding: 10px;
+	font-size: 13px;
+	color: #333000;
+	vertical-align: middle;
+}
+
+.box li a, .box li em {
+	color: #18398F;
+	text-decoration: none;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 16px;
+	padding-top: 3px;
+}
+
+.boxDesc {
+	font-size: 13px;
+	color: #444;
+	padding: 15px 10px;
+}
+
+.boxDesc p {
+	line-height: 18px;
+	font-weight: bold;
+}
+
+.boxDesc p:last-child {
+	padding-top: 15px;
+}
