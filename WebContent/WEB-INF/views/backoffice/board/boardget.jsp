@@ -8,6 +8,7 @@
 </head>
 <body>
 
+
 <%=session.getAttribute("SESS_TITLE") %><br>
 <%=session.getAttribute("SESS_WRITER") %><br>
 <%=session.getAttribute("SESS_CONTENT") %><br>
