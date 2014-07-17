@@ -31,10 +31,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>::: Cdol Spring - BackOffice :::</title>
+	<title>::: Cdol Spring - bus :::</title>
 </head>
 <frameset rows="0, *" border="0" frameborder="0" framespacing="0">
-	<frame name="blank"   src="/backoffice/blank.jsp" border="0" frameborder="0" noresize marginwidth="0" marginheight="0" scrolling="no" />
-	<frame name="content" src="/backoffice/loginPage.do" border="0" frameborder="0" noresize marginwidth="0" marginheight="0" scrolling="auto" />
+	<frame name="blank"   src="/bus/blank.jsp" border="0" frameborder="0" noresize marginwidth="0" marginheight="0" scrolling="no" />
+	<frame name="content" src="/bus/loginPage.do" border="0" frameborder="0" noresize marginwidth="0" marginheight="0" scrolling="auto" />
 </frameset>
 </html>

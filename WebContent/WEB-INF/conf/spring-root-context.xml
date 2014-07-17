@@ -11,7 +11,7 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 	
 	<!-- ============================================================================ -->
-	<!-- [2013-12-13][pluto@i-popcorn.co.kr][INSERT: For Annotation] -->
+	<!-- [2013-12-13][ivrson][INSERT: For Annotation] -->
 	<!-- ============================================================================ -->
 	<context:annotation-config />
 	
@@ -19,6 +19,7 @@
 	<!-- [2014-04-10][ivrson][INSERT: Property for Common(Static)] -->
 	<!-- ============================================================================ -->
 	<util:properties id="commonProperties" location="/WEB-INF/conf/common.properties"/>
+	
 	
 	<!-- ============================================================================ -->
 	<!-- [2014-04-10][ivrson][INSERT: Property for Config(Dynamic)] -->
@@ -39,6 +40,19 @@
 		</constructor-arg>
 	</bean>
 	
+	<!-- [2014-07-17][ivrson@i-popcorn.co.kr][INSERT: Email(Gmail)] -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="ivrson9@gmail.com" />
+		<property name="password" value="xkznal86" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>
+	</bean>
 	
 	<!-- ============================================================================ -->
 	<!-- [2014-04-09][ivrson][INSERT: 0. Define Property for DB] -->

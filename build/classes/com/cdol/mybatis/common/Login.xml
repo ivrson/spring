@@ -4,7 +4,7 @@
 	
 	<select id="select" parameterType="string" resultType="LoginVO">
 		SELECT
-			id, passwd
+			passwd, userName
 		FROM
 			cdol_user
 		WHERE

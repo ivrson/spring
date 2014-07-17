@@ -23,9 +23,10 @@
 	<section id="container">
 		<div class="box">
 			<ul>
-				<li>kr.co.ipopcorn.front(프론트 PC 웹 사이트)<em><a href="/front/">/front/</a></em></li>
-				<li>kr.co.ipopcorn.front/mobile(프론트 Mobile 웹 사이트)<em><a href="/front/mobile">/front/mobile/</a></em></li>
-				<li>kr.co.ipopcorn.backoffice(백오피스 PC 웹 사이트)<em><a href="/backoffice/">/backoffice/</a></em></li>
+				<li>(프론트 PC 웹 사이트)<em><a href="/front/">/front/</a></em></li>
+				<li>(프론트 Mobile 웹 사이트)<em><a href="/front/mobile">/front/mobile/</a></em></li>
+				<li>(백오피스 PC 웹 사이트)<em><a href="/backoffice/">/backoffice/</a></em></li>
+				<li>(버스 API 테스트)<em><a href="/bus/">/bus/</a></em></li>
 			</ul>
 		</div>
 		<div class="boxDesc">

@@ -1,41 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd 
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-	
+
 	<!-- ============================================================================ -->
 	<!-- [DEFAULT] Enables the Spring MVC @Controller programming model] -->
 	<!-- ============================================================================ -->
 	<mvc:annotation-driven />
-	
+
 	<!-- ============================================================================ -->
 	<!-- [2014-04-09][ivrson][INSERT: @Controller Auto Scan] -->
 	<!-- ============================================================================ -->
 	<context:component-scan base-package="com.cdol">
-		<context:include-filter type="regex" expression="com.cdol..*Controller.*" />
+		<context:include-filter type="regex"
+			expression="com.cdol..*Controller.*" />
 	</context:component-scan>
-	
-	<beans:bean id="viewResolver"	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="/WEB-INF/views/"/>
-		<beans:property name="suffix" value=".jsp"/>
-		<beans:property name="contentType" value="text/html; charset=UTF-8"/>
-		<beans:property name="order" value="1" />
+
+	<!-- ============================================================================ -->
+	<!-- [2014-04-09][ivrson][INSERT: JSP View Resolver] -->
+	<!-- ============================================================================ -->
+	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="contentType" value="text/html; charset=UTF-8" />
+		<beans:property name="order" value="0" />  
 	</beans:bean>
-	
+     
+    <!-- ============================================================================ -->
+	<!-- [2014-05-27][ivrson][INSERT: Multiple View Resolver (XML, JSON)] -->
+	<!-- ============================================================================ -->
+	<!-- <context:component-scan base-package="com.cdol.busTest"/>
+    <beans:bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <beans:property name="order" value="1"/>
+        <beans:property name="mediaTypes">
+            <beans:map>
+                <beans:entry key="json" value="application/json"/>
+                <beans:entry key="xml" value="application/xml"/>
+            </beans:map>
+        </beans:property>
+ 
+        <beans:property name="defaultContentType" value="text/html"/>
+        <beans:property name="ignoreAcceptHeader" value="true"/>
+        <beans:property name="defaultViews">
+            <beans:list>
+                <beans:bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+                    <beans:property name="prefixJson" value="false"/>
+                </beans:bean>
+                <beans:bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+                    <beans:property name="marshaller" ref="jaxbMarshaller"/>
+                    <beans:property name="contentType" value="application/xml; charset=UTF-8"/>
+                </beans:bean>
+            </beans:list>
+        </beans:property>
+    </beans:bean> -->
+     
+    <!-- XML 형태 반환을 위한 마샬링 클래스 설정 -->
+    <!--<beans:bean id="jaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+        <beans:property name="classesToBeBound">
+            <beans:list>
+                <beans:value>com.cdol.busTest.model.XmlData</beans:value>
+            </beans:list>
+        </beans:property>
+    </beans:bean> -->
+
+
 	<!-- ============================================================================ -->
 	<!-- [2014-04-09][ivrson][INSERT: For Transaction] -->
 	<!-- ============================================================================ -->
 	<tx:annotation-driven proxy-target-class="true" />
-	
+
 	<!-- ============================================================================ -->
 	<!-- [2014-04-09][ivrson][INSERT: Load Interceptors] -->
 	<!-- ============================================================================ -->
@@ -45,9 +85,9 @@
 			<exclude-mapping path="/pause.iwf" />
 			<exclude-mapping path="/deny.iwf" />
 			<exclude-mapping path="/error.iwf" />
-			<beans:bean class="com.cdol.util.spring.interceptor.SystemInterceptor"/>
+			<beans:bean class="com.cdol.util.spring.interceptor.SystemInterceptor" />
 		</interceptor>
 	</mvc:interceptors>
-	
+
 
 </beans:beans>

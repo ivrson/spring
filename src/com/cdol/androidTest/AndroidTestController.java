@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cdol.backoffice.common.service.LoginService;
-import com.cdol.backoffice.common.vo.LoginVO;
 
 @RequestMapping("/androidTest")
 @Controller
@@ -25,34 +24,6 @@ public class AndroidTestController {
 		
 		mav.addObject("id", request.getParameter("id"));
 		mav.addObject("passwd", request.getParameter("passwd"));
-		
-		return mav;
-	}
-	
-	@RequestMapping("/login.do")
-	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mav = new ModelAndView();
-		
-		String id = request.getParameter("id");
-		String passwd = request.getParameter("passwd");
-
-		LoginVO param = new LoginVO();
-		param.setId(id);
-		param.setPasswd(passwd);
-
-		LoginVO loginVO = loginService.getLoginAuthorizationCheck(id);
-		
-		if(loginVO == null){
-			mav.setViewName("backoffice/login");
-		}
-		else {
-			if(!passwd.equals(loginVO.getPasswd())){
-				mav.setViewName("backoffice/login");
-			}
-			else {
-				mav.setViewName("backoffice/main");
-			}
-		}
 		
 		return mav;
 	}

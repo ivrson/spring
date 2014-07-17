@@ -1,28 +1,28 @@
 /**
  * YOU ARE STRICTLY PROHIBITED TO COPY, DISCLOSE, DISTRIBUTE, MODIFY OR USE THIS PROGRAM
- * IN PART OR AS A WHOLE WITHOUT THE PRIOR WRITTEN CONSENT OF CDOL.
- * CDOL OWNS THE INTELLECTUAL PROPERTY RIGHTS IN AND TO THIS PROGRAM.
- * COPYRIGHT (C) 2014 CDOL ALL RIGHTS RESERVED.
+ * IN PART OR AS A WHOLE WITHOUT THE PRIOR WRITTEN CONSENT OF I-POPCORN.CO.KR.
+ * I-POPCORN.CO.KR OWNS THE INTELLECTUAL PROPERTY RIGHTS IN AND TO THIS PROGRAM.
+ * COPYRIGHT (C) 2014 I-POPCORN.CO.KR ALL RIGHTS RESERVED.
  *
- * ÇÏ±â ÇÁ·Î±×·¥¿¡ ´ëÇÑ ÀúÀÛ±ÇÀ» Æ÷ÇÔÇÑ ÁöÀûÀç»ê±ÇÀº cdol¿¡ ÀÖÀ¸¸ç,
- * cdolÀÌ ¸í½ÃÀûÀ¸·Î Çã¿ëÇÏÁö ¾Ê´Â »ç¿ë, º¹»ç, º¯°æ ¹× Á¦ 3ÀÚ¿¡ ÀÇÇÑ °ø°³, ¹èÆ÷´Â ¾ö°İÈ÷ ±İÁöµÇ¸ç
- * cdolÀÇ ÁöÀûÀç»ê±Ç Ä§ÇØ¿¡ ÇØ´çµÈ´Ù.
- * Copyright (C) 2014 cdol All Rights Reserved.
+ * í•˜ê¸° í”„ë¡œê·¸ë¨ì— ëŒ€í•œ ì €ì‘ê¶Œì„ í¬í•¨í•œ ì§€ì ì¬ì‚°ê¶Œì€ i-popcorn.co.krì— ìˆìœ¼ë©°,
+ * i-popcorn.co.krì´ ëª…ì‹œì ìœ¼ë¡œ í—ˆìš©í•˜ì§€ ì•ŠëŠ” ì‚¬ìš©, ë³µì‚¬, ë³€ê²½ ë° ì œ 3ìì— ì˜í•œ ê³µê°œ, ë°°í¬ëŠ” ì—„ê²©íˆ ê¸ˆì§€ë˜ë©°
+ * i-popcorn.co.krì˜ ì§€ì ì¬ì‚°ê¶Œ ì¹¨í•´ì— í•´ë‹¹ëœë‹¤.
+ * Copyright (C) 2014 i-popcorn.co.kr All Rights Reserved.
  *
  *
- * @author ivrson
- * @since 2014-04-10
+ * @author pluto@i-popcorn.co.kr
+ * @since 2014-05-28
  * @version 1.0.0
  *
  *
- * Program		: com.cdol
+ * Program		: kr.co.i-popcorn.popcorn
  * Description	:
  * Environment	: JRE 1.7 or more
- * File			: SystemInterceptor.java
+ * File			: Datetime.java
  * Function		:
  * Notes		:
  * History		: [NO][Programmer][Description]
- *				: [20140225000000][ivrson][CREATE: Initial Release]
+ *				: [20140528000000][pluto@i-popcorn.co.kr][CREATE: Initial Release]
  */
 package com.cdol.util.common;
 
@@ -32,8 +32,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * @author ivrson
- * @since 2014-04-10
+ * @author pluto@i-popcorn.co.kr
+ * @since 2014-05-28
  * 
  * <p>DESCRIPTION
  * <p>IMPORTANT
@@ -41,13 +41,13 @@ import java.util.Date;
 public class Datetime {
 	
 	/**
-	 * @author ivrson
-	 * @since 2014-04-10
+	 * @author pluto@i-popcorn.co.kr
+	 * @since 2014-05-28
 	 * 
 	 * @param String
 	 * @param String
 	 * @return Date
-	 * <p>DESCRIPTION: ³¯Â¥ °´Ã¼ ¾ò±â(Get datetime object)
+	 * <p>DESCRIPTION: ë‚ ì§œ ê°ì²´ ì–»ê¸°(Get datetime object)
 	 * <p>IMPORTANT
 	 * <p>EXAMPLE: <code>format = "yyyy-MM-dd kk:mm:ss"</code>
 	 */
@@ -59,12 +59,12 @@ public class Datetime {
 	}
 	
 	/**
-	 * @author ivrson
-	 * @since 2014-04-10
+	 * @author pluto@i-popcorn.co.kr
+	 * @since 2014-05-28
 	 * 
 	 * @param String
 	 * @return String
-	 * <p>DESCRIPTION: ³¯Â¥ ¹®ÀÚ¿­ ¾ò±â(Get datetime string)
+	 * <p>DESCRIPTION: ë‚ ì§œ ë¬¸ìì—´ ì–»ê¸°(Get datetime string)
 	 * <p>IMPORTANT
 	 * <p>EXAMPLE: <code>format = "yyyy-MM-dd" or "yyyy-MM-dd kk:mm:ss" or "yyyy-MM-dd kk:mm:ss SSS"</code>
 	 */
